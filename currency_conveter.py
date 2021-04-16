@@ -46,7 +46,7 @@ class App(tk.Tk):
         self.amount_field = Entry(self, bd=3, relief=tk.RIDGE, justify=tk.CENTER, validate='key', validatecommand=valid)
         self.converted_amount_field_label = Label(self, text='', fg='black', bg='white', relief=tk.RIDGE,
                                                   justify=tk.CENTER, width=17, borderwidth=3)
-                                                  
+
         # dropdown
         self.from_currency_variable = StringVar(self)
         self.from_currency_variable.set("INR")  # default value
@@ -61,3 +61,10 @@ class App(tk.Tk):
         self.to_currency_dropdown = ttk.Combobox(self, textvariable=self.to_currency_variable,
                                                  values=list(self.currency_converter.currencies.keys()), font=font,
                                                  state='readonly', width=12, justify=tk.CENTER)
+
+         # placing
+        self.from_currency_dropdown.place(x=30, y=120)
+        self.amount_field.place(x=36, y=150)
+        self.to_currency_dropdown.place(x=340, y=120)
+        # self.converted_amount_field.place(x = 346, y = 150)
+        self.converted_amount_field_label.place(x=346, y=150)
